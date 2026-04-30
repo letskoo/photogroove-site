@@ -1,0 +1,341 @@
+@font-face {
+    font-family: "NanumSquare";
+    src: url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/NanumSquareL.woff") format("woff");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "NanumSquare";
+    src: url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/NanumSquareEB.woff") format("woff");
+    font-weight: 800;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    font-family: "NanumSquare", sans-serif;
+    color: #111;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* 1페이지 */
+.page-main {
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.main-wrap h1 {
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.main-menu {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.main-menu em {
+    margin: 0 12px;
+    font-style: normal;
+}
+
+.start-btn {
+  margin-top: 200px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  animation: blink 1.5s infinite;
+}
+
+/* 1페이지 하단 로고 */
+.bottom-logo {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-logo img {
+  width: 120px;
+  opacity: 0.8;
+}
+
+/* 2페이지 */
+#page2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+.design-frame {
+    width: 620px;
+    min-height: 100vh;
+    position: relative;
+}
+
+.mobile-wrap {
+    width: 390px;
+    padding: 60px 24px 24px;
+}
+
+/* 로고 */
+.top-logo {
+    width: 250px;
+    cursor: pointer;
+}
+
+/* 정보 */
+.info {
+    margin-top: 50px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.info .address {
+    margin-bottom: 20px;
+}
+
+.info .contact p {
+    margin: 2px 0 2px 10px;
+    line-height: 1.2;
+}
+
+/* 카카오 버튼 */
+.kakao-btn.yellow {
+    position: absolute;
+    top: 235px;
+    right: 24px;
+    background: #f4e81c;
+    color: #000;
+    font-size: 12px;
+    padding: 6px 10px;
+    text-decoration: none;
+}
+
+/* 라인 */
+.line {
+    width: 620px;
+    height: 1px;
+    background: #111;
+    margin: 20px 0;
+    margin-left: -24px;
+}
+
+/* 총비용 */
+.total-box span {
+    font-size: 14px;
+}
+
+.total {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* 옵션 */
+.options {
+    width: 570px;
+    margin-top: 20px;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.group-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    margin: 0 0 4px;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: left;
+}
+
+.group-title span {
+    font-size: 13px;
+    transition: transform 0.2s ease;
+}
+
+.option-group.open .group-title span {
+    transform: rotate(180deg);
+}
+
+.sub-options {
+    display: none;
+}
+
+.option-group.open .sub-options {
+    display: block;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.options label span {
+    flex: 1;
+    padding-left: 20px;   /* ← 이거 추가 */
+}
+
+/* 체크박스 */
+.options input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #9b9b9b;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.options input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 7px;
+    border-right: 2px solid #9b9b9b;
+    border-bottom: 2px solid #9b9b9b;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%) rotate(45deg);
+}
+
+.options input[type="checkbox"]:checked {
+    background: #ff0000;
+    border-color: #ff0000;
+}
+
+.options input[type="checkbox"]:checked::after {
+    border-color: #fff;
+}
+
+/* 모바일 */
+@media (max-width: 620px) {
+    #page2 {
+        display: block;
+        overflow-x: hidden;
+    }
+
+    .design-frame {
+        width: 100%;
+    }
+
+    .mobile-wrap {
+        width: 100%;
+        padding: 38px 24px 24px;
+    }
+
+    .top-logo {
+        width: 150px;
+    }
+
+    .info {
+        margin-top: 34px;
+        margin-left: 0;
+        font-size: 10px;
+    }
+
+    .info .address {
+        margin-bottom: 14px;
+    }
+
+    .info .contact p {
+        margin-left: 8px;
+    }
+
+    .kakao-btn.yellow {
+        top: 160px;
+        right: 24px;
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .line {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .total-box span {
+        font-size: 12px;
+    }
+
+    .total {
+        font-size: 14px;
+    }
+
+    .options {
+        width: 100%;
+    }
+
+    .option-group {
+        margin-bottom: 16px;
+    }
+
+    .group-title,
+    .options label {
+        font-size: 12px;
+    }
+
+    .options input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 620px) {
+    .main-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        white-space: normal;
+        font-size: 11px;
+        gap: 6px;
+    }
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+.contact a,
+.contact a:visited,
+.contact a:hover,
+.contact a:active {
+    color: #111;
+    text-decoration: none;
+}
